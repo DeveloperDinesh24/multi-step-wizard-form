@@ -3,6 +3,10 @@ export default function Step2_Address({ setStep }) {
     setStep((prev) => prev + 1)
   }
 
+  const prevStep = () => {
+    setStep(prev => prev - 1)
+  }
+
   return (
     <>
       <h1 className='text-4xl'>Step 2- Address</h1>
@@ -55,19 +59,26 @@ export default function Step2_Address({ setStep }) {
           </div>
         </div>
 
-        <div className='self-end flex gap-4 items-center'>
-          <button
-            type='reset'
-            className='text-xl w-fit px-2 py-1 bg-red-600 text-red-50 cursor-pointer rounded-md'
-          >
-            Reset
+        <div className='self-end flex w-full justify-between items-center'>
+          <button 
+          onClick={prevStep}
+          className="w-fit px-4 py-1 cursor-pointer bg-indigo-700 rounded text-xl text-indigo-200">
+            Back
           </button>
-          <button
-            onClick={nextStep}
-            className='text-2xl w-fit px-4 py-1 bg-green-600 text-green-50 cursor-pointer rounded-md'
-          >
-            Next
-          </button>
+          <div className="flex gap-4 items-center">
+            <button
+              type='reset'
+              className='text-xl w-fit  px-2 py-1 bg-red-600 text-red-50 cursor-pointer rounded-md'
+            >
+              Reset
+            </button>
+            <button
+              onClick={nextStep}
+              className='text-2xl w-fit px-4 py-1 cursor-pointer bg-green-600 text-green-50 cursor-pointer rounded-md'
+            >
+              Next
+            </button>
+          </div>
         </div>
       </form>
     </>
