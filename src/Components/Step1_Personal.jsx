@@ -1,4 +1,66 @@
+import { useState } from 'react'
+
 export default function Step1_Personal() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    email: '',
+    mobileNumber: '',
+  })
+
+  const handleReset = (e) => {
+    // e.preventDefault()
+    setFormData({
+      firstName: '',
+      lastName: '',
+      dateOfBirth: '',
+      email: '',
+      mobileNumber: '',
+    })
+  }
+
+  const handleFirstNameChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        firstName: e.target.value,
+      }
+    })
+  }
+  const handleSecondNameChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        lastName: e.target.value,
+      }
+    })
+  }
+  const handleDateOfBirthChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        dateOfBirth: e.target.value,
+      }
+    })
+  }
+  const handleEmailChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        email: e.target.value,
+      }
+    })
+  }
+  const handleMobileNumberChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        mobileNumber: e.target.value,
+      }
+    })
+  }
+
   return (
     <>
       <div className='w-full h-fit pb-2 flex justify-center gap-8'>
